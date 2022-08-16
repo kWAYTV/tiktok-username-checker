@@ -1,6 +1,6 @@
 import requests, os, threading, random, time
 from colorama import Fore, Back, Style
-from threading import *
+from pystyle import Colors, Colorate, Center
 
 clear = lambda: os.system("cls" if os.name in ("nt", "dos") else "clear") # Don't touch this
 users = open('check.txt', 'r').read().split('\n')

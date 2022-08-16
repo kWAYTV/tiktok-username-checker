@@ -9,6 +9,18 @@ proxyDebug = False
 os.system(f"title Tiktok Username Checker - Starting...")
 clear()
 
+# Vanity Generator Logo
+logo = """
+████████╗██╗██╗░░██╗████████╗░█████╗░██╗░░██╗  ░█████╗░██╗░░██╗███████╗░█████╗░██╗░░██╗██████╗░
+╚══██╔══╝██║██║░██╔╝╚══██╔══╝██╔══██╗██║░██╔╝  ██╔══██╗██║░░██║██╔════╝██╔══██╗██║░██╔╝██╔══██╗
+░░░██║░░░██║█████═╝░░░░██║░░░██║░░██║█████═╝░  ██║░░╚═╝███████║█████╗░░██║░░╚═╝█████═╝░██████╔╝
+░░░██║░░░██║██╔═██╗░░░░██║░░░██║░░██║██╔═██╗░  ██║░░██╗██╔══██║██╔══╝░░██║░░██╗██╔═██╗░██╔══██╗
+░░░██║░░░██║██║░╚██╗░░░██║░░░╚█████╔╝██║░╚██╗  ╚█████╔╝██║░░██║███████╗╚█████╔╝██║░╚██╗██║░░██║
+░░░╚═╝░░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝"""
+
+def printLogo():
+        print(Center.XCenter(Colorate.Horizontal(Colors.white_to_green, logo, 1)))
+
 def check():
     global count
     session = requests.Session()
@@ -45,6 +57,7 @@ def check():
 
 
 clear()
+printLogo()
 print(f"{Fore.MAGENTA}[{Fore.RESET}!{Fore.MAGENTA}] {Fore.RESET}Found {Fore.GREEN}{len(users)}{Fore.RESET} accounts to check.")
 try:
     while True:

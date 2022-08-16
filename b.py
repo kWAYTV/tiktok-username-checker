@@ -32,14 +32,14 @@ def check():
             else:
                 pass
             r = session.get(f'https://www.tiktok.com/@{line}', headers={'Connection': 'keep-alive', 'User-Agent': 'TikTok 25.7.4 rv:174014 (iPhone; iOS 16.0; sv_SE) Cronet'}, timeout=60)
-            if r.status_code == 200:
-                print(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}] {Fore.RESET}Free: " + line)
-                with open ("free.txt", "a") as f:
+            if r.status_code == 200 or 204:
+                print(f"{Fore.GREEN}[{Fore.RESET}+{Fore.GREEN}] {Fore.RESET}Taken: " + line)
+                with open ("taken.txt", "a") as f:
                     f.write(line + "\n")
                     count += 1
             elif r.status_code == 404:
-                print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Taken: "+ line)
-                with open ("taken.txt", "a") as f:
+                print(f"{Fore.RED}[{Fore.RESET}-{Fore.RED}] {Fore.RESET}Free: "+ line)
+                with open ("free.txt", "a") as f:
                     f.write(line + "\n")
                     count += 1
             elif r.status_code == 429:
